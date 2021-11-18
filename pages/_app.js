@@ -1,8 +1,12 @@
-// pages/_app.js
 import "../styles/globals.css";
+import { BookmarkContextProvider } from "../context/bookmarks";
 
-function MyApp({ Component, pageProps }) {
-  return <Component {...pageProps} />;
+function Application({ Component, pageProps }) {
+  return (
+    <BookmarkContextProvider>
+      <Component {...pageProps} />
+    </BookmarkContextProvider>
+  );
 }
 
-export default MyApp;
+export default Application;

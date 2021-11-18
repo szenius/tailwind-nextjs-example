@@ -37,3 +37,4 @@ Check out our [Next.js deployment documentation](https://nextjs.org/docs/deploym
 
 - [Set up NextJS project](https://nextjs.org/docs)
 - [Set up Tailwind for NextJS project](https://tailwindcss.com/docs/guides/nextjs)
+- [Set up Context](https://www.netlify.com/blog/2020/12/01/using-react-context-for-state-management-in-next.js/)

@@ -1,8 +1,12 @@
 import Head from "next/head";
 import Image from "next/image";
+import { useContext } from "react";
+import { BookmarkContext } from "../context/bookmarks";
 import styles from "../styles/Home.module.css";
 
 export default function Home() {
+  const { bookmarks, toggleBookmark } = useContext(BookmarkContext);
+
   return (
     <div>
       <Head>
@@ -13,14 +17,18 @@ export default function Home() {
       <main className="font-serif">
         <div className="p-32 space-y-16">
           <h1 className="text-6xl font-black">Hello World</h1>
+          Bookmarked: {bookmarks}
           <div className="flex flex-wrap gap-8">
             <div className="w-1/4">
-              <h2
-                id="card-title"
-                className="text-m leading-loose text-center uppercase tracking-widest"
-              >
-                Mercury
-              </h2>
+              <div className="flex justify-between">
+                <h2
+                  id="card-title"
+                  className="text-m leading-loose text-center uppercase tracking-widest pl-2"
+                >
+                  Mercury
+                </h2>
+                <button onClick={() => toggleBookmark("Mercury")}>+</button>
+              </div>
               <Image
                 src="/mercury.jpg"
                 className="mx-auto my-4"
@@ -39,9 +47,12 @@ export default function Home() {
               </p>
             </div>
             <div className="w-1/4">
-              <h2 className="text-m leading-loose text-center uppercase tracking-widest">
-                Venus
-              </h2>
+              <div className="flex justify-between">
+                <h2 className="text-m leading-loose text-center uppercase tracking-widest pl-2">
+                  Venus
+                </h2>
+                <button onClick={() => toggleBookmark("Venus")}>+</button>
+              </div>
               <Image
                 src="/venus.jpg"
                 className="mx-auto my-4"
